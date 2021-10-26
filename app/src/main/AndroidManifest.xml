@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".Pesquisa_Farmacos"></activity>
+        <activity android:name=".TabelaTuberculose"></activity>
+        <activity android:name=".Pesquisa_Farmacos" />
         <activity android:name=".AbreviaturasAcronimos" />
         <activity android:name=".SobreApp" />
         <activity android:name=".PesquisasRecentes" />
