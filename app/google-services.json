@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "908450472349",
+    "firebase_url": "https://projecto-fnmm-db-externo.firebaseio.com",
+    "project_id": "projecto-fnmm-db-externo",
+    "storage_bucket": "projecto-fnmm-db-externo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908450472349:android:3ddfe65f9a9a0650ea4f74",
+        "android_client_info": {
+          "package_name": "FNMM.F2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908450472349-89tkjfi4kmhcmglfm6uvuav3p6kg8q9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX5k_z7haxm57PvOpzzmMAGuBhI0madI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908450472349-89tkjfi4kmhcmglfm6uvuav3p6kg8q9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908450472349:android:e638d0d750da356aea4f74",
+        "android_client_info": {
+          "package_name": "com.example.fnmm2021"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908450472349-89tkjfi4kmhcmglfm6uvuav3p6kg8q9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX5k_z7haxm57PvOpzzmMAGuBhI0madI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908450472349-89tkjfi4kmhcmglfm6uvuav3p6kg8q9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:908450472349:android:e86375e8ee404936ea4f74",
+        "android_client_info": {
+          "package_name": "projecto.fnmm.externo.db"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "908450472349-076em81tkshja3s6cgsge2ofn87okuim.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "projecto.fnmm.externo.db",
+            "certificate_hash": "a8c2efbc0771e3414ccd70dcfa8b627ca0b0e34a"
+          }
+        },
+        {
+          "client_id": "908450472349-89tkjfi4kmhcmglfm6uvuav3p6kg8q9a.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDX5k_z7haxm57PvOpzzmMAGuBhI0madI0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "908450472349-89tkjfi4kmhcmglfm6uvuav3p6kg8q9a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

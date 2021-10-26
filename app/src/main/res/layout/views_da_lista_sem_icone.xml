@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/contraintfarmaco"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="@dimen/margem5dp"
+    android:layout_marginBottom="@dimen/margem5dp"
+    android:paddingLeft="@dimen/margem5dp">
+
+
+    <TextView
+        android:id="@+id/letrainicial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem5dp"
+        android:layout_marginBottom="5dp"
+        android:gravity="center_horizontal|center_vertical"
+android:layout_marginTop="@dimen/margem5dp"
+        android:text="M"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/nome_farmaco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem8dp"
+        android:fontFamily="@font/anton_regular"
+        android:text="Aparelho Cardiovascular"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/letrainicial"
+        app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/apresentacao_farmaco"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem8dp"
+        android:text="Aparelho Cardiovascular"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        app:layout_constraintStart_toEndOf="@id/letrainicial"
+        app:layout_constraintTop_toBottomOf="@id/nome_farmaco" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginLeft="@dimen/margem5dp"
+        android:layout_marginTop="@dimen/margem5dp"
+        android:layout_marginRight="@dimen/margem5dp"
+        android:background="#dfdfdf"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/apresentacao_farmaco" />
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/margem8dp">
+
+    <ImageView
+        android:id="@+id/imagem_da_lista"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:padding="5dp"
+        android:src="@drawable/circulo_capitulos"
+        android:scaleType="centerCrop"/>
+
+    <TextView
+        android:id="@+id/textView_nome_farmaco_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="false"
+        android:layout_marginLeft="10dp"
+        android:text="Teste"
+        android:layout_toRightOf="@id/imagem_da_lista"
+        android:textSize="18sp"
+        android:textColor="#555"
+        android:textStyle="bold"
+        />
+
+    <TextView
+        android:text="Teste"
+        android:id="@+id/textView_apresentacao_listview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView_nome_farmaco_listview"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@id/imagem_da_lista"
+        android:textColor="#666"
+        android:textSize="14sp" />
+</RelativeLayout>

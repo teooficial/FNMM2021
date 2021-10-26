@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#fafafa"
+    android:paddingLeft="@dimen/margem16dp"
+    android:paddingRight="@dimen/margem24dp"
+    tools:context=".PaginaInicial">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linearlayout1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem24dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:id="@+id/imageview_logo"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:src="@drawable/logo7" />
+
+            <TextView
+                android:id="@+id/textview_logo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:text="FNMM"
+                android:fontFamily="@font/anton_regular"
+
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/imageview_logo" />
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/constraint1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/linearlayout1">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartao1"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="@dimen/margem8dp"
+                android:layout_marginRight="@dimen/margem8dp"
+                android:background="@color/white"
+                android:onClick="abrirfarmacos"
+                app:cardElevation="@dimen/margem8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <ImageButton
+
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/azulverde1"
+                        android:scaleType="center" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margem24dp"
+                        android:text="Ver todos"
+                        android:textColor="#6f6f6f"
+                        android:fontFamily="@font/anton_regular" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartao2"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="@dimen/margem8dp"
+                android:layout_marginTop="@dimen/margem24dp"
+                android:layout_marginRight="@dimen/margem8dp"
+                android:background="@color/white"
+                android:onClick="abrirfarmacos"
+                app:cardElevation="@dimen/margem5dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cartao1">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/laranjavermelho2"
+                        android:src="@drawable/chapter_32x32" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margem24dp"
+                        android:text="Listar capitulos"
+
+                        android:fontFamily="@font/anton_regular" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartao3"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="@dimen/margem8dp"
+                android:layout_marginTop="@dimen/margem24dp"
+                android:layout_marginRight="@dimen/margem8dp"
+                android:layout_marginBottom="@dimen/margem24dp"
+                android:background="@color/white"
+                android:onClick="abrirfarmacos"
+                app:cardElevation="@dimen/margem5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cartao2">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="@color/laranjavermelho1"
+                        android:src="@drawable/pharmaceutical_32x32" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margem24dp"
+                        android:text="Listar formas farmaceuticas"
+
+                        android:fontFamily="@font/anton_regular" />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cartao4"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginLeft="@dimen/margem8dp"
+                android:layout_marginTop="@dimen/margem24dp"
+                android:layout_marginRight="@dimen/margem8dp"
+                android:layout_marginBottom="@dimen/margem24dp"
+                android:background="@color/white"
+                android:onClick="abrirfarmacos"
+                app:cardElevation="@dimen/margem5dp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cartao3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:padding="8dp">
+
+                    <Button
+                        android:layout_width="80dp"
+                        android:layout_height="match_parent"
+                        android:background="#C9E265" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="@dimen/margem24dp"
+                        android:text="Listar por categorias "
+                        android:textColor="#2f2f2f"
+                        android:fontFamily="@font/anton_regular"
+                        />
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>

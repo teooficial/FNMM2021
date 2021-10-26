@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/busca"
+        app:showAsAction="always"
+        android:icon="@android:drawable/ic_search_category_default"
+        android:visible="true"
+        android:title="Editar informacao do sistema"/>
+
+    <!--<item-->
+        <!--android:title="@string/action_settings"-->
+        <!--android:id="@+id/action_settings"-->
+        <!--android:icon="@android:drawable/ic_menu_set_as"-->
+        <!--android:showAsAction="alwaydefs"/>-->
+
+    <item
+        android:title="@string/sobre_a_app"
+        android:id="@+id/id_menu_sobreapp"
+        android:icon="@android:drawable/ic_menu_set_as"
+        />
+
+
+    <item
+        android:title="@string/anexos_menu"
+        android:id="@+id/id_menu_anexos"
+        android:icon="@android:drawable/ic_menu_set_as"
+        />
+
+
+    <item
+        android:visible="false"
+        android:title="@string/terminarsessao"
+        android:id="@+id/id_menu_terminar_sessao"
+        android:icon="@android:drawable/ic_menu_set_as"
+        />
+
+</menu>

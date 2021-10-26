@@ -1,0 +1,173 @@
+<resources>
+    <string name="app_name">FNMM2021</string>
+    <string name="tudo">Tudo</string>
+    <string name="linear_layout_manager">Layout linear</string>
+    <string name="grid_layout_manager">Layout em grade</string>
+    <string name="element_text">Elemento texto</string>
+    <string name="intro_message">Intro</string>
+    <string name="apresentacao">Apresentação</string>
+    <string name="vias_de_administra_o">Vias de Administração</string>
+    <string name="indicacoes">Indicações</string>
+    <string name="dosagem">Dosagem</string>
+    <string name="efeitossecundarios">Efeitos Secundários</string>
+    <string name="contraindicacoes">Contra-Indicações</string>
+    <string name="notasprecaucoes">Notas e Precauções</string>
+    <string name="nivelprescricao">Nível de Prescrição</string>
+
+
+    <!--Lista Abreviaturas-->
+    <string name="abreviaturas_lista">
+        <![CDATA[
+AAS <br/> <br/>
+ACTH<br/> <br/>
+AINE<br/> <br/>
+ALT<br/> <br/>
+Amp.<br/> <br/>
+AST<br/> <br/>
+AV<br/> <br/>
+AVC<br/> <br/>
+Cáps.<br/> <br/>
+CF<br/> <br/>
+CIMed<br/> <br/>
+Comp.<br/> <br/>
+CPK<br/> <br/>
+DMID<br/> <br/>
+DMNID<br/> <br/>
+DPOC<br/> <br/>
+E.V.<br/> <br/>
+ECG<br/> <br/>
+FC<br/> <br/>
+Fr.<br/> <br/>
+FR<br/> <br/>
+FSH<br/> <br/>
+FV<br/> <br/>
+G6PD<br/> <br/>
+h<br/> <br/>
+HbA1C<br/> <br/>
+HDL<br/> <br/>
+Hgb<br/> <br/>
+HIV<br/> <br/>
+HMGCoa<br/> <br/>
+HTA<br/> <br/>
+I.A.<br/> <br/>
+I.L.<br/> <br/>
+I.M.<br/> <br/>
+IC<br/> <br/>
+ICC<br/> <br/>
+I.D.<br/> <br/>
+IECA<br/> <br/>
+Ig<br/> <br/>
+IMAO<br/> <br/>
+Inj.<br/> <br/>
+INR<br/><br/>
+IP<br/> <br/>
+LDL<br/> <br/>
+MISAU<br/> <br/>
+NYHA<br/> <br/>
+ORL<br/> <br/>
+PAV<br/><br/>
+PVJ<br/> <br/>
+PSA<br/> <br/>
+PVC<br/> <br/>
+RDA<br/> <br/>
+S.C.<br/> <br/>
+Sida<br/> <br/>
+SMI<br/> <br/>
+SNC<br/> <br/>
+Sol.<br/> <br/>
+Sup.<br/> <br/>
+Susp.<br/> <br/>
+T4<br/> <br/>
+Tº<br/> <br/>
+TA<br/> <br/>
+TB<br/> <br/>
+THS<br/> <br/>
+TP<br/> <br/>
+TSH<br/> <br/>
+TTP<br/> <br/>
+TV<br/> <br/>
+US<br/> <br/>
+μg
+        ]]>
+    </string>
+
+
+    <!--LIsta dos nomes das abreviaturas-->
+    <string name="nomes_abreviaturas_lista">
+        <![CDATA[
+Ácido acetilsalicílico<br/> <br/>
+Hormona adrenocorticotrópica<br/> <br/>
+Anti-inflamatório não-esteroide<br/> <br/>
+Alanina amino-transferase<br/> <br/>
+Ampola<br/> <br/>
+Asparto amino Transferase<br/> <br/>
+Aurículo ventricular<br/> <br/>
+Acidente Vascular Cerebral<br/> <br/>
+Cápsulas<br/> <br/>
+Classe funcional<br/> <br/>
+Centro de Informação Sobre Medicamentos<br/> <br/>
+Comprimido<br/> <br/>
+Creatina fosfoquinase<br/> <br/>
+Diabetes mellitus insulino dependente<br/> <br/>
+Diabetes mellitus não-insulino dependente<br/> <br/>
+Doença Pulmonar Obstrutiva Crónica<br/> <br/>
+Endovenosa<br/> <br/>
+Electrocardiograma<br/> <br/>
+Frequência Cardíaca<br/> <br/>
+Frasco<br/> <br/>
+Frequência Respiratória<br/> <br/>
+Hormona folículo estimulante<br/> <br/>
+Fibrilhação ventricular<br/> <br/>
+Glicose-6-fosfato desidrogenase<br/> <br/>
+Hora<br/> <br/>
+Hemoglobina glicosilada<br/> <br/>
+Lipoproteínas de alta densidade<br/> <br/>
+Hemoglobina<br/> <br/>
+Vírus de Imunodeficiência Humana<br/> <br/>
+3-hidroxi-3-metilglutaril coenzima A<br/> <br/>
+Hipertensão Arterial<br/> <br/>
+Intra-arterial<br/> <br/>
+Intra-lombar<br/> <br/>
+Intra-muscular<br/> <br/>
+Insuficiência cardíaca<br/> <br/>
+Insuficiência cardíaca congestiva<br/> <br/>
+Intra-dérmica<br/> <br/>
+Inibidores da enzima de conversão da angiotensina<br/> <br/>
+Imunoglobulinas<br/> <br/>
+Inibidores da monoaminoxidase<br/> <br/>
+Injectável<br/> <br/>
+International Normalized Ratio<br/> <br/>
+Intra-pleural<br/> <br/>
+Lipoproteínas de baixa densidade<br/> <br/>
+Ministério da Saúde<br/> <br/>
+New York Health Assocition<br/> <br/>
+Otorrinolaringologia<br/> <br/>
+Programa Alargado de Vacinações<br/> <br/>
+Pressão venosa jugular<br/> <br/>
+Antigéneo Específico da Prostata<br/> <br/>
+Pressão Venosa Central<br/> <br/>
+Recommended Dietary Allowance<br/> <br/>
+Subcutânea<br/> <br/>
+Síndrome de Imunodeficiência Adquirida<br/> <br/>
+Saúde Materno-infantil<br/> <br/>
+Sistema Nervoso Central<br/> <br/>
+Solução<br/><br/>
+Supositório<br/><br/>
+Suspensão<br/><br/>
+Tiroxina<br/> <br/>
+Temperatura<br/><br/>
+Tensão Arterial<br/><br/>
+Tuberculose<br/><br/>
+Terapia Hormonal Substitutiva<br/><br/>
+Tuberculose Pulmonar<br/><br/>
+Hormona estimulante da tiróide<br/><br/>
+Tempo parcial de tromboplastina<br/><br/>
+Taquicardia ventricular<br/><br/>
+Unidade Sanitária<br/><br/>
+Microgramas<br/><br/>
+        ]]>
+    </string>
+    <string name="terminarsessao">Terminar Sessão</string>
+    <string name="anexos_menu">Abreviaturas e Acrónimos</string>
+    <string name="sobre_a_app">Sobre a App</string>
+</resources>

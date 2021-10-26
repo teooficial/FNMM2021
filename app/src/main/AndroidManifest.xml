@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.fnmm2021">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/logo7"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppCompat.Light">
+        <activity android:name=".Pesquisa_Farmacos"></activity>
+        <activity android:name=".AbreviaturasAcronimos" />
+        <activity android:name=".SobreApp" />
+        <activity android:name=".PesquisasRecentes" />
+        <activity
+            android:name=".FarmacoIndividualActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name=".CategoriasActivity" />
+        <activity android:name=".FormasActivity" />
+        <activity android:name=".FarmacosActivity" />
+        <activity android:name=".CapitulosActivity" />
+        <activity android:name=".ClassesGuardadas.ActividadeTeste" />
+        <activity android:name=".PaginaInicial">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity">
+
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+
+
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+        </activity>
+    </application>
+
+</manifest>

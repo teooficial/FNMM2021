@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <ImageView
+        android:visibility="gone"
+        android:id="@+id/image_top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/background"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:elevation="@dimen/margem8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <LinearLayout
+        android:onClick="abrirfarmacos"
+        android:id="@+id/linearlayout1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margem48dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/linearlayout2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image_top">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab1"
+            android:layout_width="wrap_content"
+            app:elevation="@dimen/margem5dp"
+            android:src="@drawable/all"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:backgroundTint="@color/azulverde1"
+
+            />
+
+        <TextView
+            android:layout_gravity="center"
+            android:id="@+id/textview_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Todos"
+
+android:layout_marginTop="@dimen/margem5dp"
+            app:layout_constraintEnd_toStartOf="@id/textview_2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fab1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout2"
+        android:layout_width="wrap_content"
+        android:onClick="abrirfarmacos"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margem48dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toStartOf="@id/linearlayout3"
+        app:layout_constraintStart_toEndOf="@id/linearlayout1"
+        app:layout_constraintTop_toBottomOf="@id/image_top">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab2"
+            app:elevation="@dimen/margem5dp"
+            android:src="@drawable/chapter3"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            app:backgroundTint="@color/teal_200"
+
+            android:layout_height="wrap_content" />
+
+        <TextView
+            android:id="@+id/textview_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Capítulos"
+
+            android:layout_gravity="center"
+android:layout_marginTop="@dimen/margem5dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/fab2" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearlayout3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="abrirfarmacos"
+        android:layout_marginTop="@dimen/margem48dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/linearlayout2"
+        app:layout_constraintTop_toBottomOf="@id/image_top">
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab3"
+            app:backgroundTint="@color/teal_700"
+            app:elevation="@dimen/margem5dp"
+            android:src="@drawable/medicine"
+            android:layout_width="wrap_content"
+            android:layout_gravity="center"
+            android:layout_height="wrap_content" />
+
+
+        <TextView
+            android:id="@+id/textview_3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/margem5dp"
+
+            android:text="Formas" />
+
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="@dimen/margem8dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/quadro"
+        android:id="@+id/card1_paginainicial"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+
+        app:layout_constraintTop_toBottomOf="@id/linearlayout1"
+        android:src="@drawable/quadro">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background_2"
+            android:scaleType="centerCrop"/>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.cardview.widget.CardView
+        app:cardElevation="@dimen/margem8dp"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/quadro"
+        android:id="@+id/card2_paginainicial"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem48dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginBottom="@dimen/margem48dp"
+        app:layout_constraintTop_toBottomOf="@id/card1_paginainicial"
+        android:src="@drawable/quadro">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/background"
+            android:scaleType="centerCrop"/>
+    </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            app:cardElevation="@dimen/margem8dp"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:background="@drawable/quadro"
+            android:id="@+id/card3_paginainicial"
+            android:layout_marginLeft="@dimen/margem16dp"
+            android:layout_marginRight="@dimen/margem16dp"
+            android:layout_marginTop="@dimen/margem48dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/margem48dp"
+            app:layout_constraintTop_toBottomOf="@id/card2_paginainicial"
+            >
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/background1"
+                android:scaleType="centerCrop"/>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
