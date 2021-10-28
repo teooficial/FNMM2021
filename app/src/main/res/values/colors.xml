@@ -17,4 +17,7 @@
     <color name="laranjavermelho1">#c32314</color>
     <color name="yellow500">#FFDE03</color>
     <color name="yellowlaranja500">#f4c400</color>
+    <color name="cinza_background">#ECEFF1</color>
+    <color name="black_blue">#37474F</color>
+    <color name="black_blue1">#263238</color>
 </resources>
