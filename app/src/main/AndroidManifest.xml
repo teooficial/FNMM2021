@@ -13,16 +13,23 @@
         <activity android:name=".Pesquisa_Farmacos" />
         <activity android:name=".AbreviaturasAcronimos" />
         <activity android:name=".SobreApp" />
-        <activity android:name=".PesquisasRecentes" />
+        <activity android:name=".PesquisasRecentes"
+            android:parentActivityName=".PaginaInicial"/>
         <activity
             android:name=".FarmacoIndividualActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CategoriasActivity" />
-        <activity android:name=".FormasActivity" />
-        <activity android:name=".FarmacosActivity" />
-        <activity android:name=".CapitulosActivity" />
+        <activity android:name=".CategoriasActivity"
+            android:parentActivityName=".PaginaInicial"/>
+        <activity android:name=".FormasActivity"
+            android:parentActivityName=".PaginaInicial"/>
+        <activity android:name=".FarmacosActivity"
+            android:parentActivityName=".PaginaInicial"/>
+        <activity android:name=".CapitulosActivity"
+            android:parentActivityName=".PaginaInicial"/>
         <activity android:name=".ClassesGuardadas.ActividadeTeste" />
-        <activity android:name=".PaginaInicial">
+        <activity android:name=".PaginaInicial"
+
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

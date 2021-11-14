@@ -63,7 +63,6 @@ public class FormasAdaptador extends RecyclerView.Adapter {
 
                 updateNote(forma);
 
-
             }
 
         });

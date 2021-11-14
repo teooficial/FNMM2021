@@ -8,6 +8,7 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="lilas">#A53D66</color>
+    <color name="cinza">#263238</color>
 
    <color name="colorPrimary">@color/teal_700</color>
    <color name="colorPrimaryDark">@color/purple_200</color>
@@ -17,7 +18,33 @@
     <color name="laranjavermelho1">#c32314</color>
     <color name="yellow500">#FFDE03</color>
     <color name="yellowlaranja500">#f4c400</color>
-    <color name="cinza_background">#ECEFF1</color>
+    <color name="cinza_background">#fefefe</color>
+    <color name="cinza_background1">#ECEFF1</color>
     <color name="black_blue">#37474F</color>
     <color name="black_blue1">#263238</color>
+
+    <color name="color_fab1">@color/azulverde1</color>
+    <color name="color_fab2">#50E3D7</color>
+    <color name="color_fab3">#6BEEC1</color>
+    <color name="color_fab4">#95F5A5</color>
+    <color name="color_fab5">#C5F988</color>
+    <color name="color_fab6">#F9F871</color>
+
+    <color name="color_fab1_segunda_serie">@color/color_fab1</color>
+    <color name="color_fab2_segunda_serie">#38BDEB</color>
+    <color name="color_fab3_segunda_serie">#589FE5</color>
+
+
+    <color name="gradient_3">#837DCB</color>
+    <color name="gradient_1">#A0579E</color>
+    <color name="gradient_33">#A53364</color>
+
+    <color name="gradient_2">#845EC2</color>
+    <color name="gradient_11">#D65DB1</color>
+    <color name="gradient_22">#FF6F91</color>
+    <color name="gradient_333">#FF9671</color>
+    <color name="gradient_55">#FFC75F</color>
+    <color name="gradient_66">#F9F871</color>
+
+
 </resources>

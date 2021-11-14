@@ -39,7 +39,7 @@
         <item name="android:textColorPrimary">@color/teal_700</item>
     </style>
 
-    <color name="cinza">#263238</color>
+
 
 
     <style name="Theme.App" parent="Theme.MaterialComponents.Light.NoActionBar">

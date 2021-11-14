@@ -73,7 +73,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/chapter3"
-                app:backgroundTint="@color/teal_200"
+                app:backgroundTint="@color/color_fab2_segunda_serie"
 
                 app:elevation="@dimen/margem5dp" />
 
@@ -109,7 +109,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:src="@drawable/medicine"
-                app:backgroundTint="@color/teal_700"
+                app:backgroundTint="@color/color_fab3_segunda_serie"
                 app:elevation="@dimen/margem5dp" />
 
 
@@ -132,6 +132,7 @@
             android:layout_marginTop="@dimen/margem48dp"
             android:layout_marginRight="@dimen/margem16dp"
             app:cardElevation="@dimen/margem8dp"
+            app:cardCornerRadius="10dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/linearlayout1">
@@ -139,7 +140,7 @@
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/minimal_medical2"
+
                 android:paddingRight="@dimen/margem8dp">
 
 
@@ -152,7 +153,7 @@
                     android:fontFamily="@font/anton_regular"
                     android:text="Tabela de dosagem de tuberculose - Manutenção Intesiva"
                     android:textAllCaps="true"
-                    android:textColor="@color/black_blue"
+                    android:textColor="#505050"
                     android:textSize="22sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -161,14 +162,17 @@
                     android:id="@+id/textButton"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margem24dp"
+                    android:layout_marginStart="24dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginEnd="24dp"
                     android:layout_marginBottom="@dimen/margem16dp"
-                    android:background="@drawable/border_radius_5"
+                    android:background="@drawable/border_radius_7"
                     android:text="Veja"
-
+                    android:layout_marginRight="@dimen/margem24dp"
+                    app:layout_constraintStart_toStartOf="parent"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                     />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
@@ -178,17 +182,21 @@
             android:id="@+id/card2_paginainicial"
             android:layout_width="match_parent"
             android:layout_height="200dp"
+            app:cardCornerRadius="10dp"
             android:layout_marginLeft="@dimen/margem16dp"
             android:layout_marginTop="@dimen/margem48dp"
             android:layout_marginRight="@dimen/margem16dp"
             app:cardElevation="@dimen/margem8dp"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/card1_paginainicial">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+
                 android:paddingRight="@dimen/margem8dp">
 
 
@@ -201,7 +209,7 @@
                     android:fontFamily="@font/anton_regular"
                     android:text="Tabela de dosagem de tuberculose - Manutenção Intesiva"
                     android:textAllCaps="true"
-                    android:textColor="@color/black_blue"
+                    android:textColor="#505050"
                     android:textSize="22sp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -211,18 +219,20 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="@dimen/margem24dp"
+                    android:layout_marginRight="@dimen/margem24dp"
                     android:layout_marginBottom="@dimen/margem16dp"
-                    android:background="@drawable/border_radius_5"
+                    android:background="@drawable/border_radius_7"
                     android:text="Veja"
-
+app:layout_constraintStart_toStartOf="parent"
                     android:textColor="@color/white"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent" />
+                     />
 
 
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.cardview.widget.CardView>
         <androidx.cardview.widget.CardView
+            android:visibility="gone"
             android:id="@+id/card3_paginainicial"
             android:layout_width="match_parent"
             android:layout_height="200dp"
@@ -245,6 +255,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
+            android:visibility="gone"
             android:id="@+id/card4paginainicial"
             android:layout_width="match_parent"
             android:layout_height="200dp"
