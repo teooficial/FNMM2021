@@ -11,11 +11,13 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toolbar;
 
 import com.example.fnmm2021.ClassesGuardadas.ActividadeTeste;
 
 public class PaginaInicial extends AppCompatActivity {
     CardView cartao1, cartao2, cartao3, cartao4;
+    private Toolbar toolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +28,9 @@ public class PaginaInicial extends AppCompatActivity {
         cartao2 = (CardView) findViewById(R.id.cartao2);
         cartao3 = (CardView) findViewById(R.id.cartao3);
         cartao4 = (CardView) findViewById(R.id.cartao4);
+
+
+
 
 
     }
@@ -89,33 +94,33 @@ public class PaginaInicial extends AppCompatActivity {
 
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.id_menu_anexos) {
-            startActivity(new Intent(this, AbreviaturasAcronimos.class));
-            return true;
-        }
-
-
-//        if (id == R.id.id_ver_todos_farmacos) {
-//            startActivity(new Intent(this, TodosFarmacos.class));
+//    @Override
+//    public boolean onOptionsItemSelected(MenuItem item) {
+//
+//        int id = item.getItemId();
+//
+//        //noinspection SimplifiableIfStatement
+//        if (id == R.id.id_menu_anexos) {
+//            startActivity(new Intent(this, AbreviaturasAcronimos.class));
 //            return true;
 //        }
-        if (id == R.id.id_menu_sobreapp) {
-            startActivity(new Intent(this, SobreApp.class));
-            return true;
-        }
-
-        if (id == R.id.busca) {
-            startActivity(new Intent(this, Pesquisa_Farmacos.class));
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
-    }
+//
+//
+////        if (id == R.id.id_ver_todos_farmacos) {
+////            startActivity(new Intent(this, TodosFarmacos.class));
+////            return true;
+////        }
+//        if (id == R.id.id_menu_sobreapp) {
+//            startActivity(new Intent(this, SobreApp.class));
+//            return true;
+//        }
+//
+//        if (id == R.id.busca) {
+//            startActivity(new Intent(this, Pesquisa_Farmacos.class));
+//            return true;
+//        }
+//        return super.onOptionsItemSelected(item);
+//    }
 
     @Override
     public void onBackPressed() {

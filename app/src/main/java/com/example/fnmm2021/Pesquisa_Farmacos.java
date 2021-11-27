@@ -7,6 +7,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -46,14 +48,60 @@ public class Pesquisa_Farmacos extends AppCompatActivity {
         firestoreDB = FirebaseFirestore.getInstance();
 
 
-        texto_pesquisa.setOnKeyListener(new View.OnKeyListener() {
+        texto_pesquisa.addTextChangedListener(new TextWatcher() {
             @Override
-            public boolean onKey(View v, int keyCode, KeyEvent event) {
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
-                carregarListaFarmacos(texto_pesquisa.getText().toString());
-                return false;
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+                if(s.length()>0) {
+
+
+                    firestoreDB.collection("farmacos")
+                            .get()
+                            .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                                @Override
+                                public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                                    if (task.isSuccessful()) {
+                                        List<TodosFarmacos> listfarmacos = new ArrayList<>();
+
+                                        for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
+                                            TodosFarmacos todosFarmacos = documentSnapshot.toObject(TodosFarmacos.class);
+                                            if(documentSnapshot.get("nome").toString().equalsIgnoreCase(texto_pesquisa.getText().toString())){
+                                                todosFarmacos.setId(documentSnapshot.getId());
+                                                listfarmacos.add(todosFarmacos);
+                                            }
+                                        }
+                                        mAdapter = new FarmacosRecyclerViewAdapter(listfarmacos, getApplicationContext(), firestoreDB);
+                                        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+                                        recyclerView.setLayoutManager(mLayoutManager);
+                                        recyclerView.setItemAnimator(new DefaultItemAnimator());
+                                        recyclerView.setAdapter(mAdapter);
+
+                                    } else {
+                                        Log.d(TAG, "Error getting documents: ", task.getException());
+                                    }
+                                }
+
+
+                            });
+                }
+                else{
+
+                    recyclerView.setVisibility(View.INVISIBLE);
+                }
+
             }
         });
+
 
     }
 
@@ -68,7 +116,7 @@ public class Pesquisa_Farmacos extends AppCompatActivity {
 
                             for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                                 TodosFarmacos todosFarmacos = documentSnapshot.toObject(TodosFarmacos.class);
-                                if(documentSnapshot.get("capitulo").toString().equalsIgnoreCase(numero_capitulo)){
+                                if(documentSnapshot.get("nome").toString().equalsIgnoreCase(numero_capitulo)){
                                     todosFarmacos.setId(documentSnapshot.getId());
                                     listfarmacos.add(todosFarmacos);
                                 }

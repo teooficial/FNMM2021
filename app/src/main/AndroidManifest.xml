@@ -9,27 +9,39 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AppCompat.Light">
-        <activity android:name=".TabelaTuberculose"></activity>
+        <activity
+            android:name=".ClassesGuardadas.TestesActivity"
+            android:label="@string/title_activity_testes"
+            android:theme="@style/Tema">
+
+        </activity>
+        <activity android:name=".TabelaTuberculose" />
         <activity android:name=".Pesquisa_Farmacos" />
         <activity android:name=".AbreviaturasAcronimos" />
         <activity android:name=".SobreApp" />
-        <activity android:name=".PesquisasRecentes"
-            android:parentActivityName=".PaginaInicial"/>
+        <activity
+            android:name=".PesquisasRecentes"
+            android:parentActivityName=".PaginaInicial" />
         <activity
             android:name=".FarmacoIndividualActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".CategoriasActivity"
-            android:parentActivityName=".PaginaInicial"/>
-        <activity android:name=".FormasActivity"
-            android:parentActivityName=".PaginaInicial"/>
-        <activity android:name=".FarmacosActivity"
-            android:parentActivityName=".PaginaInicial"/>
-        <activity android:name=".CapitulosActivity"
-            android:parentActivityName=".PaginaInicial"/>
+        <activity
+            android:name=".CategoriasActivity"
+            android:parentActivityName=".PaginaInicial" />
+        <activity
+            android:name=".FormasActivity"
+            android:parentActivityName=".PaginaInicial" />
+        <activity
+            android:name=".FarmacosActivity"
+            android:parentActivityName=".PaginaInicial" />
+        <activity
+            android:name=".CapitulosActivity"
+            android:parentActivityName=".PaginaInicial" />
         <activity android:name=".ClassesGuardadas.ActividadeTeste" />
-        <activity android:name=".PaginaInicial"
+        <activity
+            android:name=".PaginaInicial"
+            android:theme="@style/Tema">
 
-            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

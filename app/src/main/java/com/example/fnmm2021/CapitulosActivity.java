@@ -63,32 +63,35 @@ public class CapitulosActivity extends AppCompatActivity {
     }
 
     private void carregarListaCapitulos() {
+        List<Capitulos> listfarmacos = new ArrayList<>();
         firestoreDB.collection("capitulos").orderBy("numero")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
                     @Override
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
-                            List<Capitulos> listfarmacos = new ArrayList<>();
+
 
                             for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                                 Capitulos capitulos = documentSnapshot.toObject(Capitulos.class);
                                 capitulos.setId(documentSnapshot.getId());
                                 listfarmacos.add(capitulos);
                             }
+
                             mAdapter = new CapituloAdaptador(listfarmacos, getApplicationContext(), firestoreDB);
                             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                             recyclerView.setLayoutManager(mLayoutManager);
                             recyclerView.setItemAnimator(new DefaultItemAnimator());
-                            recyclerView.setAdapter(mAdapter);
 
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());
                         }
+
                     }
 
 
                 });
+
     }
 
 
