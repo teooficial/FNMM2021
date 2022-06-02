@@ -15,11 +15,13 @@ public class TodosFarmacos {
     private String contraindicacoes;
     private String notasprecaucoes;
     private String nivelprescricao;
+    private String capitulo;
+    private String formafarmaceutica;
 
     public TodosFarmacos() {
     }
 
-    public TodosFarmacos(String nome, String apresentacao, String viaadministracao, String dosagem, String indicacoes, String efeitossecundarios, String contraindicacoes, String notasprecaucoes, String nivelprescricao) {
+    public TodosFarmacos(String nome, String apresentacao, String viaadministracao, String dosagem, String indicacoes, String efeitossecundarios, String contraindicacoes, String notasprecaucoes, String nivelprescricao, String capitulo_numero, String formafarmaceutica) {
         this.nome = nome;
         this.apresentacao = apresentacao;
         this.viaadministracao = viaadministracao;
@@ -29,9 +31,11 @@ public class TodosFarmacos {
         this.contraindicacoes = contraindicacoes;
         this.notasprecaucoes = notasprecaucoes;
         this.nivelprescricao = nivelprescricao;
+        this.capitulo = capitulo_numero;
+        this.formafarmaceutica = formafarmaceutica;
     }
 
-    public TodosFarmacos(String id, String nome, String apresentacao, String viaadministracao, String dosagem,String indicacoes, String efeitossecundarios, String contraindicacoes, String notasprecaucoes, String nivelprescricao) {
+    public TodosFarmacos(String id, String nome, String apresentacao, String viaadministracao, String dosagem,String indicacoes, String efeitossecundarios, String contraindicacoes, String notasprecaucoes, String nivelprescricao, String capitulo_numero, String formafarmaceutica) {
         this.id = id;
         this.nome = nome;
         this.apresentacao = apresentacao;
@@ -42,6 +46,8 @@ public class TodosFarmacos {
         this.contraindicacoes = contraindicacoes;
         this.notasprecaucoes = notasprecaucoes;
         this.nivelprescricao = nivelprescricao;
+        this.capitulo = capitulo_numero;
+        this.formafarmaceutica = formafarmaceutica;
     }
 
     public String getId() {
@@ -124,6 +130,23 @@ public class TodosFarmacos {
         this.apresentacao = apresentacao;
     }
 
+    public String getCapitulo() {
+        return capitulo;
+    }
+
+    public void setCapitulo(String capitulo) {
+        this.capitulo = capitulo;
+    }
+
+
+    public String getFormafarmaceutica() {
+        return formafarmaceutica;
+    }
+
+    public void setFormafarmaceutica(String formafarmaceutica) {
+        this.formafarmaceutica = formafarmaceutica;
+    }
+
     public Map toMap() {
 
         HashMap result = new HashMap<>();
@@ -136,6 +159,8 @@ public class TodosFarmacos {
         result.put("contraindicacao", this.contraindicacoes);
         result.put("notasprecaucoes", this.notasprecaucoes);
         result.put("nivelprescricao", this.nivelprescricao);
+        result.put("capitulo", this.capitulo);
+        result.put("formafarmaceutica", this.formafarmaceutica);
 
         return result;
     }

@@ -1,281 +1,147 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cinza_background">
+    android:background="@color/white"
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    >
+
+
+    <!--ImageView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:scaleType="centerCrop"
+        android:src="@drawable/img_pills2" /-->
 
-        <ImageView
-            android:id="@+id/image_top"
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginTop="@dimen/margem24dp"
+        android:layout_marginBottom="@dimen/margem24dp"
+        android:layout_marginRight="@dimen/margem24dp"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        app:cardElevation="@dimen/margem8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:elevation="@dimen/margem8dp"
-            android:src="@drawable/background"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:paddingTop="@dimen/margem24dp"
+            android:paddingBottom="@dimen/margem24dp"
+            android:layout_height="wrap_content">
 
-
-        <LinearLayout
-            android:id="@+id/linearlayout1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margem48dp"
-            android:onClick="abrirfarmacos"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toStartOf="@id/linearlayout2"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/image_top">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab1"
-                android:layout_width="wrap_content"
+            <LinearLayout
+                android:id="@+id/linearlayout1"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/all"
-                app:backgroundTint="@color/azulverde1"
-                app:elevation="@dimen/margem5dp"
+                android:layout_weight="1"
+                android:onClick="abrirfarmacos"
+                android:orientation="vertical"
 
-                />
-
-            <TextView
-                android:id="@+id/textview_1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margem5dp"
-
-                android:text="Todos"
-                app:layout_constraintEnd_toStartOf="@id/textview_2"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/linearlayout2"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fab1" />
-        </LinearLayout>
+                app:layout_constraintTop_toTopOf="parent">
 
-        <LinearLayout
-            android:id="@+id/linearlayout2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margem48dp"
-            android:onClick="abrirfarmacos"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toStartOf="@id/linearlayout3"
-            app:layout_constraintStart_toEndOf="@id/linearlayout1"
-            app:layout_constraintTop_toBottomOf="@id/image_top">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/all"
+                    app:backgroundTint="@color/azulverde1"
+                    app:elevation="@dimen/margem5dp"
 
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab2"
-                android:layout_width="wrap_content"
+                    />
+
+                <TextView
+                    android:id="@+id/textview_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margem5dp"
+                    android:text="Todos"
+                    android:textColor="#0f0f0f"
+                    app:layout_constraintEnd_toStartOf="@id/textview_2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fab1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout2"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/chapter3"
-                app:backgroundTint="@color/color_fab2_segunda_serie"
+                android:layout_weight="1"
+                android:onClick="abrirfarmacos"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/linearlayout3"
+                app:layout_constraintStart_toEndOf="@id/linearlayout1"
+                app:layout_constraintTop_toTopOf="parent">
 
-                app:elevation="@dimen/margem5dp" />
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/chapter3"
+                    app:backgroundTint="@color/color_fab2_segunda_serie"
 
-            <TextView
-                android:id="@+id/textview_2"
-                android:layout_width="wrap_content"
+                    app:elevation="@dimen/margem5dp" />
+
+                <TextView
+                    android:id="@+id/textview_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margem5dp"
+                    android:text="Capítulos"
+                    android:textColor="#0f0f0f"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fab2" />
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/linearlayout3"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"
-
-                android:layout_marginTop="@dimen/margem5dp"
-                android:text="Capítulos"
+                android:layout_weight="1"
+                android:onClick="abrirfarmacos"
+                android:orientation="vertical"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/fab2" />
+                app:layout_constraintStart_toEndOf="@id/linearlayout2"
+                app:layout_constraintTop_toTopOf="parent">
 
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/linearlayout3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/margem48dp"
-            android:onClick="abrirfarmacos"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/linearlayout2"
-            app:layout_constraintTop_toBottomOf="@id/image_top">
-
-            <com.google.android.material.floatingactionbutton.FloatingActionButton
-                android:id="@+id/fab3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:src="@drawable/medicine"
-                app:backgroundTint="@color/color_fab3_segunda_serie"
-                app:elevation="@dimen/margem5dp" />
-
-
-            <TextView
-                android:id="@+id/textview_3"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="@dimen/margem5dp"
-
-                android:text="Formas" />
-
-        </LinearLayout>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card1_paginainicial"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginLeft="@dimen/margem16dp"
-            android:layout_marginTop="@dimen/margem48dp"
-            android:layout_marginRight="@dimen/margem16dp"
-            app:cardElevation="@dimen/margem8dp"
-            app:cardCornerRadius="10dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/linearlayout1">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                android:paddingRight="@dimen/margem8dp">
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/fab3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/medicine"
+                    app:backgroundTint="@color/color_fab3_segunda_serie"
+                    app:elevation="@dimen/margem5dp" />
 
 
                 <TextView
+                    android:id="@+id/textview_3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margem24dp"
-                    android:layout_marginTop="@dimen/margem16dp"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/anton_regular"
-                    android:text="Tabela de dosagem de tuberculose - Manutenção Intesiva"
-                    android:textAllCaps="true"
-                    android:textColor="#505050"
-                    android:textSize="22sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
+                    android:layout_gravity="center"
+                    android:layout_marginTop="@dimen/margem5dp"
+                    android:text="Formas"
 
-                <Button
-                    android:id="@+id/textButton"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="24dp"
-                    android:layout_marginLeft="24dp"
-                    android:layout_marginEnd="24dp"
-                    android:layout_marginBottom="@dimen/margem16dp"
-                    android:background="@drawable/border_radius_7"
-                    android:text="Veja"
-                    android:layout_marginRight="@dimen/margem24dp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                     />
+                    android:textColor="#0f0f0f" />
 
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card2_paginainicial"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            app:cardCornerRadius="10dp"
-            android:layout_marginLeft="@dimen/margem16dp"
-            android:layout_marginTop="@dimen/margem48dp"
-            android:layout_marginRight="@dimen/margem16dp"
-            app:cardElevation="@dimen/margem8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card1_paginainicial">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-
-                android:paddingRight="@dimen/margem8dp">
-
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margem24dp"
-                    android:layout_marginTop="@dimen/margem16dp"
-                    android:ellipsize="end"
-                    android:fontFamily="@font/anton_regular"
-                    android:text="Tabela de dosagem de tuberculose - Manutenção Intesiva"
-                    android:textAllCaps="true"
-                    android:textColor="#505050"
-                    android:textSize="22sp"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <Button
-                    android:id="@+id/textButton1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="@dimen/margem24dp"
-                    android:layout_marginRight="@dimen/margem24dp"
-                    android:layout_marginBottom="@dimen/margem16dp"
-                    android:background="@drawable/border_radius_7"
-                    android:text="Veja"
-app:layout_constraintStart_toStartOf="parent"
-                    android:textColor="@color/white"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                     />
-
-
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </androidx.cardview.widget.CardView>
-        <androidx.cardview.widget.CardView
-            android:visibility="gone"
-            android:id="@+id/card3_paginainicial"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginLeft="@dimen/margem16dp"
-            android:layout_marginTop="@dimen/margem48dp"
-            android:layout_marginRight="@dimen/margem16dp"
-            android:layout_marginBottom="@dimen/margem48dp"
-            android:background="@drawable/quadro"
-            android:src="@drawable/quadro"
-            app:cardElevation="@dimen/margem8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card2_paginainicial">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/background" />
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:visibility="gone"
-            android:id="@+id/card4paginainicial"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_marginLeft="@dimen/margem16dp"
-            android:layout_marginTop="@dimen/margem48dp"
-            android:layout_marginRight="@dimen/margem16dp"
-            android:layout_marginBottom="@dimen/margem48dp"
-            android:background="@drawable/quadro"
-            app:cardElevation="@dimen/margem8dp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card3_paginainicial">
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scaleType="centerCrop"
-                android:src="@drawable/background1" />
-        </androidx.cardview.widget.CardView>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</androidx.core.widget.NestedScrollView>
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

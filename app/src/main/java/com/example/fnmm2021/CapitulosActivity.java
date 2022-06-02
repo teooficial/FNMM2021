@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.fnmm2021.Adaptadores.CapituloAdaptador;
 import com.example.fnmm2021.Adaptadores.FarmacosRecyclerViewAdapter;
@@ -63,6 +64,8 @@ public class CapitulosActivity extends AppCompatActivity {
     }
 
     private void carregarListaCapitulos() {
+
+
         List<Capitulos> listfarmacos = new ArrayList<>();
         firestoreDB.collection("capitulos").orderBy("numero")
                 .get()
@@ -76,12 +79,17 @@ public class CapitulosActivity extends AppCompatActivity {
                                 Capitulos capitulos = documentSnapshot.toObject(Capitulos.class);
                                 capitulos.setId(documentSnapshot.getId());
                                 listfarmacos.add(capitulos);
+
                             }
 
                             mAdapter = new CapituloAdaptador(listfarmacos, getApplicationContext(), firestoreDB);
+
+
                             RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
                             recyclerView.setLayoutManager(mLayoutManager);
                             recyclerView.setItemAnimator(new DefaultItemAnimator());
+
+
 
                         } else {
                             Log.d(TAG, "Error getting documents: ", task.getException());

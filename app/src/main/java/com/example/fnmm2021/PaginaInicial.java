@@ -1,6 +1,5 @@
 package com.example.fnmm2021;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
@@ -12,8 +11,6 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toolbar;
-
-import com.example.fnmm2021.ClassesGuardadas.ActividadeTeste;
 
 public class PaginaInicial extends AppCompatActivity {
     CardView cartao1, cartao2, cartao3, cartao4;
@@ -38,25 +35,25 @@ public class PaginaInicial extends AppCompatActivity {
     public void abrirfarmacos(View view) {
 
         int id = view.getId();
-
-        if (id == R.id.cartao1) {
-//            Intent intent = new Intent(this, ActividadeTeste.class);
-            Intent intent = new Intent(this, FarmacosActivity.class);
-            this.startActivity(intent);
-
-        } else if (id == R.id.cartao2) {
-            Intent intent = new Intent(this, CapitulosActivity.class);
-            this.startActivity(intent);
-
-        } else if (id == R.id.cartao3) {
-            Intent intent = new Intent(this, FormasActivity.class);
-            this.startActivity(intent);
-
-        } else if (id == R.id.cartao4) {
-            Intent intent = new Intent(this, CategoriasActivity.class);
-            this.startActivity(intent);
-
-        }
+//
+//        if (id == R.id.cartao1) {
+////            Intent intent = new Intent(this, ActividadeTeste.class);
+//            Intent intent = new Intent(this, FarmacosActivity.class);
+//            this.startActivity(intent);
+//
+//        } else if (id == R.id.cartao2) {
+//            Intent intent = new Intent(this, CapitulosActivity.class);
+//            this.startActivity(intent);
+//
+//        } else if (id == R.id.cartao3) {
+//            Intent intent = new Intent(this, FormasActivity.class);
+//            this.startActivity(intent);
+//
+//        } else if (id == R.id.cartao4) {
+//            Intent intent = new Intent(this, CategoriasActivity.class);
+//            this.startActivity(intent);
+//
+//        }
 
         if (id == R.id.fab_recente_activity) {
 //            Intent intent = new Intent(this, ActividadeTeste.class);
@@ -66,15 +63,20 @@ public class PaginaInicial extends AppCompatActivity {
         }
         if (id == R.id.linearlayout1) {
 //            Intent intent = new Intent(this, ActividadeTeste.class);
-            Intent intent = new Intent(this, FarmacosActivity.class);
+            Intent intent = new Intent(this, ListaTodosFarmacos.class);
             this.startActivity(intent);
 
         } else if (id == R.id.linearlayout2) {
-            Intent intent = new Intent(this, CapitulosActivity.class);
+
+//            Toast.makeText(getApplicationContext(), "Teste Capi", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(this, ListaCapitulos.class);
             this.startActivity(intent);
 
+//            Intent intent = new Intent(this, FarmacosActivity.class);
+//            this.startActivity(intent);
+
         } else if (id == R.id.linearlayout3) {
-            Intent intent = new Intent(this, FormasActivity.class);
+            Intent intent = new Intent(this, ListaFormasFarmaceuticas.class);
             this.startActivity(intent);
 
         }
@@ -89,38 +91,39 @@ public class PaginaInicial extends AppCompatActivity {
         inflater.inflate(R.menu.menu_actionbar, menu);
 
 
+
         return true;
 
 
     }
 
-//    @Override
-//    public boolean onOptionsItemSelected(MenuItem item) {
-//
-//        int id = item.getItemId();
-//
-//        //noinspection SimplifiableIfStatement
-//        if (id == R.id.id_menu_anexos) {
-//            startActivity(new Intent(this, AbreviaturasAcronimos.class));
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.id_menu_anexos) {
+            startActivity(new Intent(this, AbreviaturasAcronimos.class));
+            return true;
+        }
+
+
+//        if (id == R.id.id_ver_todos_farmacos) {
+//            startActivity(new Intent(this, TodosFarmacos.class));
 //            return true;
 //        }
-//
-//
-////        if (id == R.id.id_ver_todos_farmacos) {
-////            startActivity(new Intent(this, TodosFarmacos.class));
-////            return true;
-////        }
-//        if (id == R.id.id_menu_sobreapp) {
-//            startActivity(new Intent(this, SobreApp.class));
-//            return true;
-//        }
-//
-//        if (id == R.id.busca) {
-//            startActivity(new Intent(this, Pesquisa_Farmacos.class));
-//            return true;
-//        }
-//        return super.onOptionsItemSelected(item);
-//    }
+        if (id == R.id.id_menu_sobreapp) {
+            startActivity(new Intent(this, SobreApp.class));
+            return true;
+        }
+
+        if (id == R.id.busca) {
+            startActivity(new Intent(this, Pesquisa_Farmacos.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
     @Override
     public void onBackPressed() {

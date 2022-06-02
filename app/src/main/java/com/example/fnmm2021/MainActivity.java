@@ -4,11 +4,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 
 import android.content.Intent;
-import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
-
-import com.example.fnmm2021.Classes.Capitulos;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
 
         if (id == R.id.cartao1) {
 //            Intent intent = new Intent(this, ActividadeTeste.class);
-            Intent intent = new Intent(this, FarmacosActivity.class);
+            Intent intent = new Intent(this, ListaTodosFarmacos.class);
 
             this.startActivity(intent);
         } else if (id == R.id.cartao2) {
@@ -42,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
             this.startActivity(intent);
 //            Toast.makeText(this, "Teste", Toast.LENGTH_LONG).show();
         } else if (id == R.id.cartao3) {
-            Intent intent = new Intent(this, FormasActivity.class);
+            Intent intent = new Intent(this, ListaFormasFarmaceuticas.class);
 
             this.startActivity(intent);
         } else if (id == R.id.cartao4) {

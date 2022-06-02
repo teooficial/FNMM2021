@@ -6,9 +6,12 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Toast;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 
 import com.example.fnmm2021.Adaptadores.FarmacosRecyclerViewAdapter;
 import com.example.fnmm2021.Classes.TodosFarmacos;
@@ -22,7 +25,7 @@ import com.google.firebase.firestore.QuerySnapshot;
 import java.util.ArrayList;
 import java.util.List;
 
-public class FarmacosActivity extends AppCompatActivity {
+public class ListaTodosFarmacos extends AppCompatActivity {
 
     private static final String TAG = "ActividadeTeste";
 
@@ -42,13 +45,15 @@ public class FarmacosActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recyclerview_list_todosfarmacos);
         firestoreDB = FirebaseFirestore.getInstance();
 
-        FarmacoIndividualActivity.codigo = "0";
+//        FarmacoIndividualActivity.codigo = "0";
 
         Bundle bundle = getIntent().getExtras();
         if (bundle != null) {
             if(bundle.getString("tabela").equalsIgnoreCase("capitulo")){
                 numero_capitulo = bundle.getString("numero");
-                carregarListaFarmacos(numero_capitulo);
+                carregarListaTodosFarmacos(numero_capitulo);
+
+//                Toast.makeText(this, numero_capitulo.toString(), Toast.LENGTH_SHORT).show();
             }
           else if(bundle.getString("tabela").equalsIgnoreCase("forma")){
                 numero_forma = bundle.getString("numero_forma");
@@ -60,11 +65,13 @@ public class FarmacosActivity extends AppCompatActivity {
 
 
         }else {
-            carregarListaFarmacos();
+            carregarListaTodosFarmacos();
         }
     }
 
     private void carregarListaFarmacosForma(String numeroforma) {
+
+
         firestoreDB.collection("farmacos")
                 .get()
                 .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
@@ -76,19 +83,104 @@ public class FarmacosActivity extends AppCompatActivity {
                             for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
                                 TodosFarmacos todosFarmacos = documentSnapshot.toObject(TodosFarmacos.class);
 
-                                if(documentSnapshot.get("formafarmaceutica").toString().equalsIgnoreCase(numeroforma)){
+                                try {
+                                    if(documentSnapshot.get("formafarmaceutica").toString().equalsIgnoreCase(numeroforma)){
+                                        todosFarmacos.setId(documentSnapshot.getId());
+                                        listfarmacos.add(todosFarmacos);
+                                    }
+                                }catch (Exception e){
+
+                                }
+
+                            }
+                            mAdapter = new FarmacosRecyclerViewAdapter(listfarmacos, getApplicationContext(), firestoreDB);
+                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+                            recyclerView.setLayoutManager(mLayoutManager);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                            recyclerView.setAdapter(mAdapter);
+
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+
+
+                });
+    }
+
+    private void carregarListaTodosFarmacos(String numero_capitulo) {
+
+
+        firestoreDB.collection("farmacos")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<TodosFarmacos> listfarmacos = new ArrayList<>();
+
+//                            Toast.makeText(FarmacosActivity.this, "Teste", Toast.LENGTH_SHORT).show();
+
+
+                            for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
+                                TodosFarmacos todosFarmacos = documentSnapshot.toObject(TodosFarmacos.class);
+
+
+
+                                try {
+                                    if(documentSnapshot.get("capitulo").toString().equalsIgnoreCase(numero_capitulo)){
+                                        todosFarmacos.setId(documentSnapshot.getId());
+                                        listfarmacos.add(todosFarmacos);
+
+//                                    Toast.makeText(FarmacosActivity.this, documentSnapshot.get("nome").toString(), Toast.LENGTH_SHORT).show();
+                                    }
+                                }catch (RuntimeException e){
+                                    //CRIAR POP-UP
+//                                    Toast.makeText(FarmacosActivity.this, e.toString(), Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                            mAdapter = new FarmacosRecyclerViewAdapter(listfarmacos, getApplicationContext(), firestoreDB);
+                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+                            recyclerView.setLayoutManager(mLayoutManager);
+                            recyclerView.setItemAnimator(new DefaultItemAnimator());
+                            recyclerView.setAdapter(mAdapter);
+
+                        } else {
+                            Log.d(TAG, "Error getting documents: ", task.getException());
+                        }
+                    }
+
+
+                });
+    }
+
+    private void carregarListaTodosFarmacos() {
+        firestoreDB.collection("farmacos").orderBy("nome")
+                .get()
+                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+
+                        try {
+                            if (task.isSuccessful()) {
+                                List<TodosFarmacos> listfarmacos = new ArrayList<>();
+
+                                for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
+                                    TodosFarmacos todosFarmacos = documentSnapshot.toObject(TodosFarmacos.class);
                                     todosFarmacos.setId(documentSnapshot.getId());
                                     listfarmacos.add(todosFarmacos);
                                 }
-                            }
-                            mAdapter = new FarmacosRecyclerViewAdapter(listfarmacos, getApplicationContext(), firestoreDB);
-                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                            recyclerView.setLayoutManager(mLayoutManager);
-                            recyclerView.setItemAnimator(new DefaultItemAnimator());
-                            recyclerView.setAdapter(mAdapter);
+                                mAdapter = new FarmacosRecyclerViewAdapter(listfarmacos, getApplicationContext(), firestoreDB);
+                                RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
+                                recyclerView.setLayoutManager(mLayoutManager);
+                                recyclerView.setItemAnimator(new DefaultItemAnimator());
+                                recyclerView.setAdapter(mAdapter);
 
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
+                            } else {
+                                Log.d(TAG, "Error getting documents: ", task.getException());
+                            }
+                        }catch (Exception e){
+
                         }
                     }
 
@@ -96,71 +188,51 @@ public class FarmacosActivity extends AppCompatActivity {
                 });
     }
 
-    private void carregarListaFarmacos(String numero_capitulo) {
-        firestoreDB.collection("farmacos")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            List<TodosFarmacos> listfarmacos = new ArrayList<>();
-
-                            for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
-                                TodosFarmacos todosFarmacos = documentSnapshot.toObject(TodosFarmacos.class);
-                                if(documentSnapshot.get("capitulo").toString().equalsIgnoreCase(numero_capitulo)){
-                                todosFarmacos.setId(documentSnapshot.getId());
-                                listfarmacos.add(todosFarmacos);
-                                }
-                            }
-                            mAdapter = new FarmacosRecyclerViewAdapter(listfarmacos, getApplicationContext(), firestoreDB);
-                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                            recyclerView.setLayoutManager(mLayoutManager);
-                            recyclerView.setItemAnimator(new DefaultItemAnimator());
-                            recyclerView.setAdapter(mAdapter);
-
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-                    }
 
 
-                });
-    }
+    //    SearView
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
 
-    private void carregarListaFarmacos() {
-        firestoreDB.collection("farmacos")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            List<TodosFarmacos> listfarmacos = new ArrayList<>();
-
-                            for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
-                                TodosFarmacos todosFarmacos = documentSnapshot.toObject(TodosFarmacos.class);
-                                todosFarmacos.setId(documentSnapshot.getId());
-                                listfarmacos.add(todosFarmacos);
-                            }
-                            mAdapter = new FarmacosRecyclerViewAdapter(listfarmacos, getApplicationContext(), firestoreDB);
-                            RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getApplicationContext());
-                            recyclerView.setLayoutManager(mLayoutManager);
-                            recyclerView.setItemAnimator(new DefaultItemAnimator());
-                            recyclerView.setAdapter(mAdapter);
-
-                        } else {
-                            Log.d(TAG, "Error getting documents: ", task.getException());
-                        }
-                    }
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_actionbar, menu);
 
 
-                });
+
+        return true;
+
+
     }
 
     @Override
-    public void onBackPressed() {
+    public boolean onOptionsItemSelected(MenuItem item) {
 
-        super.onBackPressed();
+        int id = item.getItemId();
+
+        //noinspection SimplifiableIfStatement
+        if (id == R.id.id_menu_anexos) {
+            startActivity(new Intent(this, AbreviaturasAcronimos.class));
+            return true;
+        }
+
+
+//        if (id == R.id.id_ver_todos_farmacos) {
+//            startActivity(new Intent(this, TodosFarmacos.class));
+//            return true;
+//        }
+        if (id == R.id.id_menu_sobreapp) {
+            startActivity(new Intent(this, SobreApp.class));
+            return true;
+        }
+
+        if (id == R.id.busca) {
+            startActivity(new Intent(this, Pesquisa_Farmacos.class));
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
+
+
 
 //    @Override
 //    public boolean onCreateOptionsMenu(Menu menu) {

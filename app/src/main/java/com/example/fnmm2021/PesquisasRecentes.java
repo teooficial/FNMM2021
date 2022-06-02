@@ -106,8 +106,8 @@ public class PesquisasRecentes extends AppCompatActivity {
 
 
 
-                    Intent intent = new Intent(getApplicationContext(), FarmacoIndividualActivity.class);
-                    FarmacoIndividualActivity.codigo = "pesquisarecente";
+                    Intent intent = new Intent(getApplicationContext(), FarmacoIndividualPesquisaRecente.class);
+//                    FarmacoIndividualActivity.codigo = "pesquisarecente";
                   intent.putExtra("id_farmaco", codigo);
                     startActivity(intent);
 

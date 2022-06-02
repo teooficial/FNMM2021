@@ -3,137 +3,275 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingLeft="@dimen/margem16dp"
-    android:paddingTop="@dimen/margem16dp"
-    android:layout_marginBottom="200dp"
-    android:paddingRight="@dimen/margem16dp">
+    android:background="#fafafa"
+>
 
-    <TextView
-        android:id="@+id/titulo_viaadministracao"
-        android:layout_width="wrap_content"
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card1"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/anton_regular"
-        android:text="@string/vias_de_administra_o"
-        android:textSize="18sp"
-        android:layout_marginTop="@dimen/margem5dp"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem8dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        app:contentPaddingBottom="@dimen/margem8dp"
+        app:contentPaddingLeft="@dimen/margem16dp"
+        app:contentPaddingRight="@dimen/margem16dp"
+        app:contentPaddingTop="@dimen/margem8dp"
+        app:layout_constraintBottom_toTopOf="@id/card2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
 
-    <TextView
-        android:id="@+id/viaadministracao"
-        android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/titulo_viaadministracao"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginTop="@dimen/margem5dp"
+                android:fontFamily="@font/anton_regular"
+                android:text="@string/vias_de_administra_o"
+                android:textSize="18sp" />
+
+            <TextView
+                android:id="@+id/viaadministracao"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:text="Teste" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card2"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem16dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        app:contentPaddingBottom="@dimen/margem8dp"
+        app:contentPaddingLeft="@dimen/margem16dp"
+        app:contentPaddingRight="@dimen/margem16dp"
+        app:contentPaddingTop="@dimen/margem8dp"
+        app:layout_constraintBottom_toTopOf="@id/card3"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titulo_viaadministracao" />
+        app:layout_constraintTop_toBottomOf="@id/card1">
 
-    <TextView
-        android:id="@+id/titulo_indicacoes"
-        android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titulo_indicacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem5dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="@string/indicacoes"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/indicacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card3"
+        app:layout_constraintBottom_toTopOf="@id/card4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/anton_regular"
-        android:text="@string/indicacoes"
-        android:layout_marginTop="@dimen/margem5dp"
-        android:textSize="18sp"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem16dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        app:contentPaddingBottom="@dimen/margem8dp"
+        app:contentPaddingLeft="@dimen/margem16dp"
+        app:contentPaddingRight="@dimen/margem16dp"
+        app:contentPaddingTop="@dimen/margem8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/viaadministracao" />
+        app:layout_constraintTop_toBottomOf="@id/card2">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+        <TextView
+            android:id="@+id/titulo_dosagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem5dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="@string/dosagem"
+            android:textSize="18sp" />
 
-    <TextView
-        android:id="@+id/indicacoes"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/dosagem"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card4"
+        app:layout_constraintBottom_toTopOf="@id/card5"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem16dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        app:contentPaddingBottom="@dimen/margem8dp"
+        app:contentPaddingLeft="@dimen/margem16dp"
+        app:contentPaddingRight="@dimen/margem16dp"
+        app:contentPaddingTop="@dimen/margem8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titulo_indicacoes" />
+        app:layout_constraintTop_toBottomOf="@id/card3">
 
-    <TextView
-        android:id="@+id/titulo_dosagem"
-        android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titulo_efeitossecundarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem5dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="@string/efeitossecundarios"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/efeitos_secundarios"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card5"
+        app:layout_constraintBottom_toTopOf="@id/card6"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/anton_regular"
-        android:text="@string/dosagem"
-        android:layout_marginTop="@dimen/margem5dp"
-        android:textSize="18sp"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem16dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        app:contentPaddingBottom="@dimen/margem8dp"
+        app:contentPaddingLeft="@dimen/margem16dp"
+        app:contentPaddingRight="@dimen/margem16dp"
+        app:contentPaddingTop="@dimen/margem8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/indicacoes" />
+        app:layout_constraintTop_toBottomOf="@id/card4">
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/dosagem"
-        android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/titulo_contraindicacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem5dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="@string/contraindicacoes"
+            android:textSize="18sp" />
+
+        <TextView
+            android:id="@+id/contraindicacoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card6"
+        app:layout_constraintBottom_toTopOf="@id/card7"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem16dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        app:contentPaddingBottom="@dimen/margem8dp"
+        app:contentPaddingLeft="@dimen/margem16dp"
+        app:contentPaddingRight="@dimen/margem16dp"
+        app:contentPaddingTop="@dimen/margem8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titulo_dosagem" />
+        app:layout_constraintTop_toBottomOf="@id/card5">
 
-    <TextView
-        android:id="@+id/titulo_efeitossecundarios"
-        android:layout_width="wrap_content"
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/titulo_notasprecaucoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem5dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="@string/notasprecaucoes"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/contraindicacoes" />
+
+        <TextView
+            android:id="@+id/notasprecaucoes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titulo_notasprecaucoes" />
+
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card7"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/anton_regular"
-        android:text="@string/efeitossecundarios"
-        android:textSize="18sp"
-        android:layout_marginTop="@dimen/margem5dp"
+        android:layout_marginLeft="@dimen/margem16dp"
+        android:layout_marginTop="@dimen/margem16dp"
+        android:layout_marginRight="@dimen/margem16dp"
+        android:layout_marginBottom="@dimen/margem16dp"
+        app:contentPaddingBottom="@dimen/margem8dp"
+        app:contentPaddingLeft="@dimen/margem16dp"
+        app:contentPaddingRight="@dimen/margem16dp"
+        app:contentPaddingTop="@dimen/margem8dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/dosagem" />
+        app:layout_constraintTop_toBottomOf="@id/card6">
 
-    <TextView
-        android:id="@+id/efeitos_secundarios"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titulo_efeitossecundarios" />
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/titulo_contraindicacoes"
-        android:layout_width="wrap_content"
-        android:textSize="18sp"
-        android:layout_marginTop="@dimen/margem5dp"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/anton_regular"
-        android:text="@string/contraindicacoes"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/efeitos_secundarios" />
+        <TextView
+            android:id="@+id/titulo_nivelprescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/margem5dp"
+            android:fontFamily="@font/anton_regular"
+            android:text="@string/nivelprescricao"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/notasprecaucoes" />
 
-    <TextView
-        android:id="@+id/contraindicacoes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titulo_contraindicacoes" />
+        <TextView
+            android:id="@+id/nivelprescricao"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/titulo_nivelprescricao" />
 
-    <TextView
-        android:id="@+id/titulo_notasprecaucoes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/anton_regular"
-        android:text="@string/notasprecaucoes"
-        android:textSize="18sp"
-        android:layout_marginTop="@dimen/margem5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/contraindicacoes" />
-
-    <TextView
-        android:id="@+id/notasprecaucoes"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/titulo_notasprecaucoes" />
-
-    <TextView
-        android:id="@+id/titulo_nivelprescricao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/anton_regular"
-        android:text="@string/nivelprescricao"
-        android:textSize="18sp"
-        android:layout_marginTop="@dimen/margem5dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/notasprecaucoes" />
-
-    <TextView
-        android:id="@+id/nivelprescricao"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintStart_toStartOf="parent"
-        android:layout_marginBottom="50dp"
-        app:layout_constraintTop_toBottomOf="@id/titulo_nivelprescricao" />
-
+        </androidx.appcompat.widget.LinearLayoutCompat>
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

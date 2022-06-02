@@ -1,13 +1,5 @@
 package com.example.fnmm2021;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,24 +7,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fnmm2021.Adaptadores.FarmacosRecyclerViewAdapter;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.fnmm2021.Classes.TodosFarmacos;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -40,11 +32,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
-public class FarmacoIndividualActivity extends AppCompatActivity {
+public class FarmacoIndividualPorCapitulo extends AppCompatActivity {
 
     private String TAG = "TodosFarmacos";
     RecyclerView recyclerView_lista;
@@ -58,6 +48,7 @@ public class FarmacoIndividualActivity extends AppCompatActivity {
     Intent intent;
 //    CollapsingToolbarLayout collapsing_toolbar_layout;
     Toolbar toolbar;
+    static String numerocapitulo_back ="";
 
 //    private static final String TAG = "AddNoteActivity";
 
@@ -79,7 +70,7 @@ public class FarmacoIndividualActivity extends AppCompatActivity {
         setContentView(R.layout.activity_farmaco_individual);
 
 
-//        intent = new Intent();
+        intent = new Intent();
 //        Bundle bundle = intent.getExtras();
         nome_do_farmaco = findViewById(R.id.nome_do_farmaco);
         apresentacao = findViewById(R.id.apresentacao);
@@ -126,7 +117,8 @@ public class FarmacoIndividualActivity extends AppCompatActivity {
             contraindicacoes.setText(bundle.getString("contraindicacoes"));
             notasprecaucoes.setText(bundle.getString("notasprecaucoes"));
             nivelprescricao.setText(bundle.getString("nivelprescricao"));
-            numero_capitulo = (bundle.getString("numero_capitulo"));
+            numero_capitulo = (bundle.getString("numero"));
+            numerocapitulo_back = numero_capitulo;
 
 
 
@@ -263,7 +255,7 @@ public class FarmacoIndividualActivity extends AppCompatActivity {
                                     apresentacao.setText(documentSnapshot.get("apresentacao").toString());
 
 
-                                    Toast.makeText(FarmacoIndividualActivity.this, documentSnapshot.get("apresentacao").toString(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(FarmacoIndividualPorCapitulo.this, documentSnapshot.get("apresentacao").toString(), Toast.LENGTH_SHORT).show();
                                     viaadministracao.setText(documentSnapshot.get("viaadministracao").toString());
                                     indicacoes.setText(documentSnapshot.get("indicacoes").toString());
                                     dosagem.setText(documentSnapshot.get("dosagem").toString());
@@ -333,4 +325,12 @@ public class FarmacoIndividualActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+
+    @Override
+    public void onBackPressed() {
+
+        Toast.makeText(this, numero_capitulo+"teste", Toast.LENGTH_SHORT).show();
+        intent.putExtra("numero", numero_capitulo);
+        super.onBackPressed();
+    }
 }

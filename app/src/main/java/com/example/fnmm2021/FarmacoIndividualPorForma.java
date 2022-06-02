@@ -1,13 +1,5 @@
 package com.example.fnmm2021;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
-import androidx.recyclerview.widget.DefaultItemAnimator;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -15,24 +7,24 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.fnmm2021.Adaptadores.FarmacosRecyclerViewAdapter;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.example.fnmm2021.Classes.TodosFarmacos;
 import com.firebase.ui.firestore.FirestoreRecyclerAdapter;
 import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.OnFailureListener;
-import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
-import com.google.android.material.appbar.CollapsingToolbarLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.firestore.QuerySnapshot;
@@ -40,11 +32,9 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 import com.squareup.picasso.Picasso;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Map;
 
-public class FarmacoIndividualActivity extends AppCompatActivity {
+public class FarmacoIndividualPorForma extends AppCompatActivity {
 
     private String TAG = "TodosFarmacos";
     RecyclerView recyclerView_lista;
@@ -71,6 +61,7 @@ public class FarmacoIndividualActivity extends AppCompatActivity {
     private FirebaseFirestore firestoreDB;
     String id = "";
     String numero_capitulo = "";
+    static String numeroforma_back ="";
 
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
@@ -127,6 +118,7 @@ public class FarmacoIndividualActivity extends AppCompatActivity {
             notasprecaucoes.setText(bundle.getString("notasprecaucoes"));
             nivelprescricao.setText(bundle.getString("nivelprescricao"));
             numero_capitulo = (bundle.getString("numero_capitulo"));
+            numeroforma_back = bundle.getString("numero_forma");
 
 
 
@@ -263,7 +255,7 @@ public class FarmacoIndividualActivity extends AppCompatActivity {
                                     apresentacao.setText(documentSnapshot.get("apresentacao").toString());
 
 
-                                    Toast.makeText(FarmacoIndividualActivity.this, documentSnapshot.get("apresentacao").toString(), Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(FarmacoIndividualPorForma.this, documentSnapshot.get("apresentacao").toString(), Toast.LENGTH_SHORT).show();
                                     viaadministracao.setText(documentSnapshot.get("viaadministracao").toString());
                                     indicacoes.setText(documentSnapshot.get("indicacoes").toString());
                                     dosagem.setText(documentSnapshot.get("dosagem").toString());

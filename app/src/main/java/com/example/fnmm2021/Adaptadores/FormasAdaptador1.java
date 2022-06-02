@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.fnmm2021.BancoDados.DBController;
 import com.example.fnmm2021.Classes.Capitulos;
+
 import com.example.fnmm2021.ListaTodosFarmacos;
 import com.example.fnmm2021.R;
 import com.google.firebase.firestore.FirebaseFirestore;
@@ -23,7 +24,8 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-public class CapituloAdaptador extends RecyclerView.Adapter {
+public class FormasAdaptador1 extends RecyclerView.Adapter {
+
 
     private List<Capitulos> listaCapitulos;
     private Context context;
@@ -37,47 +39,69 @@ public class CapituloAdaptador extends RecyclerView.Adapter {
     Cursor cursor;
     DBController dbController;
     String TAG = "capitulo";
+    int num=0;
 
-
-    public CapituloAdaptador(List<Capitulos> notesList, Context context, FirebaseFirestore firestoreDB) {
+    public FormasAdaptador1(List<Capitulos> notesList, Context context, FirebaseFirestore firestoreDB) {
         this.listaCapitulos = notesList;
         this.context = context;
         this.firestoreDB = firestoreDB;
     }
 
 
+
     @NonNull
     @Override
-    public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+    public CapitulosHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.views_da_lista_com_icone, parent, false);
 
-        return new CapituloAdaptador.ViewHolder(view);
+        return new CapitulosHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
-        final int itemPosition = position;
-        final Capitulos capitulos = listaCapitulos.get(itemPosition);
+
+        final Capitulos capitulos;
+
+        if(num<getItemCount()) {
+            capitulos = listaCapitulos.get(num);
+
+            metodo(capitulos.getNome());
+            nome_farmaco.setText(capitulos.getNome());
+//
+            String value = capitulos.getIcone();
+            Picasso.get().load(value).into(icone);
+
+            num++;
+        }
+
+    }
+
+//    @Override
+//    public void onBindViewHolder(@NonNull CapitulosHolder holder, int position) {
+//
+//        final Capitulos capitulos  = listaCapitulos.get(position);
+//
+//        metodo(capitulos.getNome());
 
 
 //        letrainicial.setText(capitulos.getNome().substring(0, 1).toUpperCase());
-        nome_farmaco.setText(capitulos.getNome());
+//        nome_farmaco.setText(capitulos.getNome());
+////
+//        String value = capitulos.getIcone();
+//        Picasso.get().load(value).into(icone);
+////
 //
-        String value = capitulos.getIcone();
-                Picasso.get().load(value).into(icone);
 //
-
-        Toast.makeText(context.getApplicationContext(), nome_farmaco.getText().toString(), Toast.LENGTH_SHORT).show();
-        contraintfarmaco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                getNivelPrescricao(todosFarmacos.getNivelprescricao());
-                updateNote(capitulos);
-
-//                Toast.makeText(context, todosFarmacos.getNivelprescricao().toString(), Toast.LENGTH_LONG).show();
-            }
-
-        });
+//        contraintfarmaco.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+////                getNivelPrescricao(todosFarmacos.getNivelprescricao());
+//                updateNote(capitulos);
+//
+////                Toast.makeText(context, todosFarmacos.getNivelprescricao().toString(), Toast.LENGTH_LONG).show();
+//            }
+//
+//        });
 
 //        delete.setOnClickListener(new View.OnClickListener() {
 //            @Override
@@ -85,20 +109,26 @@ public class CapituloAdaptador extends RecyclerView.Adapter {
 ////                deleteNote(todosFarmacos.getId(), itemPosition);
 //            }
 //        });
-    }
+//    }
+
+     void metodo(String numero){
+         Toast.makeText(context, numero, Toast.LENGTH_SHORT).show();
+     }
 
     @Override
     public int getItemCount() {
         return listaCapitulos.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
 
-        ViewHolder(View view) {
-            super(view);
-            contraintfarmaco = view.findViewById(R.id.constraint_com_icone);
-            icone = view.findViewById(R.id.icone_capitulo);
-            nome_farmaco = view.findViewById(R.id.txt_nomecapitulo);
+        public class CapitulosHolder extends RecyclerView.ViewHolder {
+
+            public CapitulosHolder(@NonNull View view) {
+
+                super(view);
+                contraintfarmaco = view.findViewById(R.id.constraint_com_icone);
+                icone = view.findViewById(R.id.icone_capitulo);
+                nome_farmaco = view.findViewById(R.id.txt_nomecapitulo);
 
 
 
@@ -107,8 +137,8 @@ public class CapituloAdaptador extends RecyclerView.Adapter {
 
 //            edit = view.findViewById(R.id.ivEdit);
 //            delete = view.findViewById(R.id.ivDelete);
+            }
         }
-    }
 
     private void updateNote(Capitulos capitulos) {
 
@@ -128,6 +158,4 @@ public class CapituloAdaptador extends RecyclerView.Adapter {
 
         context.startActivity(intent);
     }
-
-
 }

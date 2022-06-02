@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.fnmm2021.BancoDados.DBController;
 import com.example.fnmm2021.Classes.TodosFarmacos;
 import com.example.fnmm2021.FarmacoIndividualActivity;
+import com.example.fnmm2021.FarmacoIndividualPorForma;
 import com.example.fnmm2021.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 
@@ -25,7 +26,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-public class FarmacosRecyclerViewAdapter extends RecyclerView.Adapter {
+public class FarmacosPorFormaRecyclerViewAdapter extends RecyclerView.Adapter {
 
     private List<TodosFarmacos> notesList;
     private Context context;
@@ -41,10 +42,10 @@ public class FarmacosRecyclerViewAdapter extends RecyclerView.Adapter {
     static String constante = "0";
 
 
-    public FarmacosRecyclerViewAdapter() {
+    public FarmacosPorFormaRecyclerViewAdapter() {
     }
 
-    public FarmacosRecyclerViewAdapter(List<TodosFarmacos> notesList, Context context, FirebaseFirestore firestoreDB) {
+    public FarmacosPorFormaRecyclerViewAdapter(List<TodosFarmacos> notesList, Context context, FirebaseFirestore firestoreDB) {
         this.notesList = notesList;
         this.context = context;
         this.firestoreDB = firestoreDB;
@@ -57,7 +58,7 @@ public class FarmacosRecyclerViewAdapter extends RecyclerView.Adapter {
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.views_da_lista_sem_icone, parent, false);
 
-        return new FarmacosRecyclerViewAdapter.ViewHolder(view);
+        return new FarmacosPorFormaRecyclerViewAdapter.ViewHolder(view);
     }
 
     @Override
@@ -149,7 +150,7 @@ public class FarmacosRecyclerViewAdapter extends RecyclerView.Adapter {
         dbController = new DBController(this.context);
         dbController.inserirActividadeRecenteCalculo(todosFarmacos.getId(),todosFarmacos.getNome(),todosFarmacos.getApresentacao(), dia_para_actividade, hora_para_actividade);
 
-        Intent intent = new Intent(this.context, FarmacoIndividualActivity.class);
+        Intent intent = new Intent(this.context, FarmacoIndividualPorForma.class);
 
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
@@ -167,6 +168,7 @@ public class FarmacosRecyclerViewAdapter extends RecyclerView.Adapter {
 
         intent.putExtra("nivelprescricao", getNivelPrescricao(todosFarmacos.getNivelprescricao()));
         intent.putExtra("numero_capitulo",todosFarmacos.getCapitulo());
+        intent.putExtra("numero_forma",todosFarmacos.getFormafarmaceutica());
 
 
 

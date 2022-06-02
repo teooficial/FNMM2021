@@ -11,12 +11,10 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.fnmm2021.Classes.Capitulos;
 import com.example.fnmm2021.Classes.FormaFarmaceutica;
-import com.example.fnmm2021.FarmacosActivity;
+import com.example.fnmm2021.ListaTodosFarmacos;
 import com.example.fnmm2021.R;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -28,6 +26,7 @@ public class FormasAdaptador extends RecyclerView.Adapter {
     private FirebaseFirestore firestoreDB;
     TextView nome_forma, inicial, apresentacao;
     ConstraintLayout contraintfarmaco;
+    int tamanho;
 
     public FormasAdaptador(List<FormaFarmaceutica> notesList, Context context, FirebaseFirestore firestoreDB) {
         this.listaForma = notesList;
@@ -51,26 +50,28 @@ public class FormasAdaptador extends RecyclerView.Adapter {
         final FormaFarmaceutica forma = listaForma.get(itemPosition);
 
 
+        if(tamanho == listaForma.size()) {
 //        letrainicial.setText(capitulos.getNome().substring(0, 1).toUpperCase());
-        nome_forma.setText(forma.getNome());
-        inicial.setText(forma.getNome().substring(0,1));
+            nome_forma.setText(forma.getNome());
+            inicial.setText(forma.getNome().substring(0, 1));
 
 //
 
-        contraintfarmaco.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+            contraintfarmaco.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                updateNote(forma);
+                    updateNote(forma);
 
-            }
+                }
 
-        });
-
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
+        tamanho = listaForma.size();
         return listaForma.size();
     }
 
@@ -93,7 +94,7 @@ public class FormasAdaptador extends RecyclerView.Adapter {
     }
 
     private void updateNote(FormaFarmaceutica formaFarmaceutica) {
-        Intent intent = new Intent(this.context, FarmacosActivity.class);
+        Intent intent = new Intent(this.context, ListaTodosFarmacos.class);
 
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 

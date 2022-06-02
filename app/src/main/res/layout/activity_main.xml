@@ -4,24 +4,49 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cinza_background"
     android:fitsSystemWindows="true"
+    android:background="@color/azulverde1"
     tools:context=".MainActivity">
+
+
 
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/layout_bg"
+        android:background="@color/white">
 
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-        <include layout="@layout/activity_main_fab_button" />
+        <ImageView
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:src="@drawable/fnmm_logo_pagina_principal"
+            android:id="@+id/img_fnm"
+            android:paddingLeft="@dimen/margem24dp"
+            android:paddingRight="@dimen/margem24dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="280dp"/>
 
+        <include layout="@layout/activity_main_fab_button"
+
+            app:layout_constraintTop_toBottomOf="@id/img_fnm"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
-    <com.google.android.material.appbar.AppBarLayout
+    <!--com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:visibility="gone"
         android:backgroundTint="@android:color/white"
         android:theme="@style/ThemeOverlay.AppCompat.Light"
 
@@ -34,7 +59,7 @@
             app:contentScrim="?attr/colorPrimary"
             app:expandedTitleGravity="bottom"
             app:layout_scrollFlags="scroll|exitUntilCollapsed"
-
+android:visibility="gone"
             app:scrimAnimationDuration="300">
 
             <ImageView
@@ -53,7 +78,7 @@
 
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
-    </com.google.android.material.appbar.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout-->
 
 
 

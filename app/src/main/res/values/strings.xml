@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FNMM2021</string>
+    <string name="app_name">FNMM</string>
     <string name="tudo">Tudo</string>
     <string name="linear_layout_manager">Layout linear</string>
     <string name="grid_layout_manager">Layout em grade</string>

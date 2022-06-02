@@ -16,7 +16,7 @@
         android:layout_marginLeft="@dimen/margem5dp"
         android:layout_marginBottom="5dp"
         android:gravity="center_horizontal|center_vertical"
-android:layout_marginTop="@dimen/margem5dp"
+
         android:text="M"
         android:textColor="@color/white"
         android:textSize="18sp"
@@ -35,6 +35,7 @@ android:layout_marginTop="@dimen/margem5dp"
         android:textSize="16sp"
         app:layout_constraintStart_toEndOf="@id/letrainicial"
         app:layout_constraintTop_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/apresentacao_farmaco"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
@@ -42,19 +43,29 @@ android:layout_marginTop="@dimen/margem5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/margem8dp"
+
         android:text="Aparelho Cardiovascular"
         app:layout_constraintBottom_toBottomOf="@id/view"
         app:layout_constraintStart_toEndOf="@id/letrainicial"
         app:layout_constraintTop_toBottomOf="@id/nome_farmaco" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+       android:textSize="20sp"
+        android:text="Teste"
+        android:visibility="gone"
+        android:id="@+id/numero_capitulo"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
 
     <View
         android:id="@+id/view"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
+        android:layout_height="0.5dp"
         android:layout_marginLeft="@dimen/margem5dp"
         android:layout_marginTop="@dimen/margem5dp"
         android:layout_marginRight="@dimen/margem5dp"
-        android:background="#dfdfdf"
+        android:background="#efefef"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/apresentacao_farmaco" />
